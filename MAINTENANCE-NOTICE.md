@@ -1,1 +1,1 @@
-This mod accepts bug fixes, compatibility fixes, and translation updates from the community.
+This mod accepts bug fixes and compatibility fixes from the community.
