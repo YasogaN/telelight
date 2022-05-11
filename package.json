@@ -9,7 +9,7 @@
     "start": "electron ."
   },
   "keywords": [],
-  "author": "Blockydablocks",
+  "author": "Blockydablocks <yasogan6@gmail.com> (https://yasogan.ml/)",
   "license": "CC-BY-NC-ND-4.0",
   "devDependencies": {
     "electron": "^18.2.2",
@@ -17,6 +17,8 @@
   },
   "bugs": {
     "url" : "https://github.com/Pyscho649/telelight/issues",
-    "email" : "blockydev@blocky.ml"
-  }
+    "email" : "yasogan6@gmail.com"
+  },
+  "private": true
+
 }
