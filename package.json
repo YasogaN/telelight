@@ -1,0 +1,22 @@
+{
+  "name": "telegram-light",
+  "version": "1.0.0",
+  "description": "A *VERY* Lightwieght telegram desktop client for Windows, Mac OS and Linux. Built with electron.js ",
+  "homepage": "https://github.com/Pyscho649/telelight/",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "keywords": [],
+  "author": "Blockydablocks",
+  "license": "CC-BY-NC-ND-4.0",
+  "devDependencies": {
+    "electron": "^18.2.2",
+    "electron-builder": "^23.0.3"
+  },
+  "bugs": {
+    "url" : "https://github.com/Pyscho649/telelight/issues",
+    "email" : "blockydev@blocky.ml"
+  }
+}
