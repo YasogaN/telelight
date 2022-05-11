@@ -16,9 +16,8 @@
     "electron-builder": "^23.0.3"
   },
   "bugs": {
-    "url" : "https://github.com/Pyscho649/telelight/issues",
-    "email" : "yasogan6@gmail.com"
+    "url": "https://github.com/Pyscho649/telelight/issues",
+    "email": "yasogan6@gmail.com"
   },
   "private": true
-
 }
