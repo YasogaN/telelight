@@ -29,7 +29,7 @@
   "build": {
     "appId": "telelight",
     "productName": "Telelight",
-    "artifactName": "${productName}-setup-${version}.${ext}",
+    "artifactName": "${productName}-setup-${shortVersion}-${os}-${arch}.${ext}",
     "copyright": "Copyright © 2022+ Blockydablocks",
     "asar": true,
     "compression": "maximum",
@@ -46,7 +46,9 @@
           "target": "msi"
         },
         {
-          "target": "portable",
+          "target": "portable"
+        },
+        {
           "arch": [
             "x64",
             "ia32",
@@ -59,8 +61,7 @@
       "oneClick": false,
       "perMachine": false,
       "allowElevation": true,
-      "allowToChangeInstallationDirectory": true,
-      "differentialPackage": false
+      "allowToChangeInstallationDirectory": true
     },
     "mac": {
       "icon": "build/icon.icns",
@@ -72,20 +73,17 @@
           "target": "pkg"
         },
         {
-          "target": "zip",
+          "target": "zip"
+        },
+        {
           "arch": [
             "x64",
             "arm64"
           ]
         }
       ],
-      "artifactName": "${productName}-setup-${shortVersion}-${os}-${arch}.${ext}",
+      "artifactName": "${productName}-setup-${version}-${arch}.${ext}",
       "category": "public.app-category.social-networking"
-    },
-    "dmg": {
-      "title": "Telelight, ${version}",
-      "internetEnabled": true,
-      "writeUpdateInfo": false
     },
     "linux": {
       "icon": "build/icon.png",
@@ -100,7 +98,9 @@
           "target": "rpm"
         },
         {
-          "target": "zip",
+          "target": "zip"
+        },
+        {
           "arch": [
             "x64",
             "ia32",

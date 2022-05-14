@@ -1,6 +1,6 @@
 appId: "telelight"
 productName: "Telelight"
-artifactName: "${productName}-setup-${version}.${ext}"
+artifactName: "${productName}-setup-${shortVersion}-${os}-${arch}.${ext}"
 
 copyright: "Copyright © 2022+ Blockydablocks"
 
@@ -17,7 +17,7 @@ win:
     - target: "nsis"
     - target: "msi"
     - target: "portable"
-      arch: 
+    - arch: 
       - "x64"
       - "ia32"
       - "arm64"
@@ -37,7 +37,7 @@ mac:
       - target: "dmg"
       - target: "pkg"
       - target: "zip"
-        arch:
+      - arch:
         - "x64"
         - "arm64"
   artifactName: "${productName}-setup-${version}-${arch}.${ext}"
@@ -51,7 +51,7 @@ linux:
     - target: "deb"
     - target: "rpm"
     - target: "zip"
-      arch:
+    - arch:
         - "x64"
         - "ia32"
         - "arm64"
