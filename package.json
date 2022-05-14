@@ -1,16 +1,18 @@
 {
   "name": "telelight",
   "version": "1.0.0",
+  "shortVersion": "1.0",
   "description": "A *VERY* Lightwieght telegram desktop client for Windows, Mac OS and Linux. Built with electron.js ",
   "homepage": "https://github.com/Pyscho649/telelight/",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron .",
-    "dist": "electron-builder build",
-    "dist:win": "npm run dist -- -w",
-    "dist:mac": "npm run dist -- -m",
-    "dist:linux": "npm run dist -- -l"
+    "build": "electron-builder build",
+    "dist:win": "npm run build -- -w",
+    "dist:mac": "npm run build -- -m",
+    "dist:linux": "npm run build -- -l",
+    "dist": "npm run build -- -mwl"
   },
   "keywords": [],
   "author": "Blockydablocks <yasogan6@gmail.com> (https://yasogan.ml/)",
@@ -23,5 +25,107 @@
     "url": "https://github.com/Pyscho649/telelight/issues",
     "email": "yasogan6@gmail.com"
   },
-  "private": true
+  "private": true,
+  "build": {
+    "appId": "telelight",
+    "productName": "Telelight",
+    "artifactName": "${productName}-setup-${version}.${ext}",
+    "copyright": "Copyright © 2022+ Blockydablocks",
+    "asar": true,
+    "compression": "maximum",
+    "files": [
+      "!{dist,.gitignore,.vscode}"
+    ],
+    "win": {
+      "icon": "build/icon.ico",
+      "target": [
+        {
+          "target": "nsis"
+        },
+        {
+          "target": "msi"
+        },
+        {
+          "target": "portable",
+          "arch": [
+            "x64",
+            "ia32",
+            "arm64"
+          ]
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": true,
+      "differentialPackage": false
+    },
+    "mac": {
+      "icon": "build/icon.icns",
+      "target": [
+        {
+          "target": "dmg"
+        },
+        {
+          "target": "pkg"
+        },
+        {
+          "target": "zip",
+          "arch": [
+            "x64",
+            "arm64"
+          ]
+        }
+      ],
+      "artifactName": "${productName}-setup-${shortVersion}-${os}-${arch}.${ext}",
+      "category": "public.app-category.social-networking"
+    },
+    "dmg": {
+      "title": "Telelight, ${version}",
+      "internetEnabled": true,
+      "writeUpdateInfo": false
+    },
+    "linux": {
+      "icon": "build/icon.png",
+      "target": [
+        {
+          "target": "AppImage"
+        },
+        {
+          "target": "deb"
+        },
+        {
+          "target": "rpm"
+        },
+        {
+          "target": "zip",
+          "arch": [
+            "x64",
+            "ia32",
+            "arm64"
+          ]
+        }
+      ],
+      "maintainer": "Blockydablocks",
+      "vendor": "Blockydablocks",
+      "synopsis": "A Telegram client",
+      "category": "Network"
+    },
+    "deb": {
+      "depends": [
+        "libnotify4",
+        "libxtst6",
+        "libnss3"
+      ]
+    },
+    "rpm": {
+      "compression": "xz"
+    },
+    "directories": {
+      "buildResources": "build",
+      "output": "dist"
+    }
+  }
 }
