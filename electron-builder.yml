@@ -1,27 +1,74 @@
-appId : com.blocky.telelight
-productName: telelight
-copyright: Copyright © 2022 Blockydablocks
-mac: 
-  category: public.app-category.social-networking
+appId: "telelight"
+productName: "Telelight"
+artifactName: "${productName}-setup-${version}.${ext}"
+
+copyright: "Copyright © 2022+ Blockydablocks"
+
+asar: true
+compression: "maximum"
+
+files:
+  - "!{dist,.gitignore,.vscode}"
+
+# Windows Configuration
+win: 
+  icon: build/icon.ico
+  target: 
+    - target: "nsis"
+    - target: "msi"
+    - target: "portable"
+      arch: 
+      - "x64"
+      - "ia32"
+      - "arm64"
+  
+
+# Windows Installer Configuration
+nsis:
+  oneClick: false
+  perMachine: false
+  allowElevation: true
+  allowToChangeInstallationDirectory: true
+
+# macOS Configuration
+mac:
+  icon: build/icon.icns
   target:
-  - target: dmg, pkg, zip
-    arch: ia32, x64
-  icon: icon/icon.icns
-  type: development
-  gatekeeperAssess: true
+      - target: "dmg"
+      - target: "pkg"
+      - target: "zip"
+        arch:
+        - "x64"
+        - "arm64"
+  artifactName: "${productName}-setup-${version}-${arch}.${ext}"
+  category: "public.app-category.social-networking"
 
-win:
-  target:
-  - target: nsis, portable, msi
-    arch: ia32, x64
-  icon: icon/icon.ico
-  publisherName: Blockydablocks
+# Linux Configuration
+linux: 
+  icon: build/icon.png
+  target: 
+    - target: "AppImage"
+    - target: "deb"
+    - target: "rpm"
+    - target: "zip"
+      arch:
+        - "x64"
+        - "ia32"
+        - "arm64"
+  maintainer: "Blockydablocks"
+  vendor: "Blockydablocks"
+  synopsis: "A Telegram client"
+  category: "Network"
 
-linx:
-  target:
-  - target: AppImage, deb, rpm
-    arch: ia32, x64
-  icon: icon/icon.png
-  category: network
+deb:
+  depends: 
+  - "libnotify4"
+  - "libxtst6"
+  - "libnss3"
 
+rpm:
+  compression: "xz"
 
+directories:
+  buildResources: "build"
+  output: "dist"
