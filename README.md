@@ -9,7 +9,7 @@
 ![GitHub release (latest by date)](https://img.shields.io/github/downloads/Psycho649/telelight/latest/total)
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/Psycho649/telelight)
 ![Snyk Vulnerabilities for GitHub Repo](https://img.shields.io/snyk/vulnerabilities/github/Psycho649/telelight) 
-
+[![CodeQL](https://github.com/Psycho649/telelight/actions/workflows/codeql-analysis.yml/badge.svg?branch=master)](https://github.com/Psycho649/telelight/actions/workflows/codeql-analysis.yml)
 ---
 
 Telelight is a ***Very*** lightweight Telegram Desktop Client Made using [electron.js](electronjs.org).
