@@ -1,3 +1,7 @@
+# Please Note that this repo is now a public archive!
+
+### Telelight V2.0 --> https://github.com/Psycho649/TelelightV2.0
+
 # Telelight
 [![GitHub issues](https://img.shields.io/github/issues/Psycho649/telelight)](https://github.com/Psycho649/telelight/issues)
 ![GitHub watchers](https://img.shields.io/github/watchers/Psycho649/telelight?style=social)
